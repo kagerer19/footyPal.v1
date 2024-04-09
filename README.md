@@ -93,7 +93,7 @@ Make sure you have the following installed on your local machine:
 ### Founders: 
 
 - Alexander Kagerer
-- [Enter name here]
+- Oliver Hintersteiner
 - Marcel Roblek
 
 ## License
