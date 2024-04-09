@@ -92,7 +92,7 @@ Make sure you have the following installed on your local machine:
 
 ### Founders: 
 
-- Alexander Kagerer
+- Alex Kagerer
 - [Enter name here]
 - [Enter name here]
 
