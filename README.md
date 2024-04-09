@@ -94,7 +94,7 @@ Make sure you have the following installed on your local machine:
 
 - Alexander Kagerer
 - [Enter name here]
-- [Enter name here]
+- Marcel Roblek
 
 ## License
 
