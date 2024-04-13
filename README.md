@@ -1,5 +1,4 @@
-# FootyPal
-
+# MatchMates
 FootyPal is an application designed to connect football enthusiasts and facilitate friendly and competitive matches. Whether you're a casual player looking for a weekend game or a seasoned athlete seeking regular matches, FootyPal has you covered.
 
 ## Introduction
