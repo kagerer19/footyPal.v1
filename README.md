@@ -1,9 +1,9 @@
 # MatchMates
-FootyPal is an application designed to connect football enthusiasts and facilitate friendly and competitive matches. Whether you're a casual player looking for a weekend game or a seasoned athlete seeking regular matches, FootyPal has you covered.
+MatchMates is an application designed to connect football enthusiasts and facilitate friendly and competitive matches. Whether you're a casual player looking for a weekend game or a seasoned athlete seeking regular matches, MatchMates has you covered.
 
 ## Introduction
 
-FootyPal aims to simplify the process of finding and joining football matches by providing a centralized platform where users can discover games, connect with other players, and participate in matches based on their preferences and availability.
+MatchMates aims to simplify the process of finding and joining football matches by providing a centralized platform where users can discover games, connect with other players, and participate in matches based on their preferences and availability.
 
 ## Features
 
@@ -50,13 +50,13 @@ Make sure you have the following installed on your local machine:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/kagerer19/footyPal.v1.git
+    git clone https://github.com/kagerer19/MatchMates.v1.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd footyPal.v1
+    cd MatchMates.v1
     ```
 
 3. Install dependencies for the frontend:
