@@ -1,9 +1,7 @@
 class ErrorResponse extends Error {
-    codeStatus: number;
-
-    constructor(message: string, codeStatus: number) {
+    // !TODO Add status codes for HTTP requests (TBD)
+    constructor(message: string) {
         super(message);
-        this.codeStatus = codeStatus;
     }
 }
 
