@@ -1,9 +1,23 @@
-// All code is for testing purposes
-import express from 'express';
+// All code is for testing purposes only
 
-const app = express();
+import "firebase/database";
+import cong from "./firebaseConfig";
+import { getDatabase, ref, onValue } from "firebase/database";
+const database = getDatabase(cong);
+const collectionRef = ref(database, "users");
 
-const port = 9000;
-app.listen(port, () => {
-    console.log(`Server is running! ${port}`);
-});
+const fetchData = () => {
+    onValue(collectionRef, (snapshot) => {
+        const dataItem = snapshot.val();
+        if (dataItem) {
+            // Convert the object values into an array
+            const displayItem= Object.values(dataItem);
+            displayItem.forEach((item) => {
+                console.table(item);
+            });
+        }
+    });
+};
+
+//Uncomment to test
+// fetchData();
