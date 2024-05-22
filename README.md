@@ -25,10 +25,10 @@ MatchMates aims to simplify the process of finding and joining football matches 
 - Backend:
   - Node.js
   - Express.js
-  - Supabase
+  - Firebase Realtime Database
 
 - Authentication:
-  - Supabase Auth
+  - Firebase Auth 
 
 ## Getting Started
 
