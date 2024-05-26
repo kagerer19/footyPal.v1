@@ -1,23 +1,32 @@
 // All code is for testing purposes only
+import cong from "./config/firebaseConfig";
+const COLLECTION_NAME = "teams";
 
-import "firebase/database";
-import cong from "./firebaseConfig";
-import { getDatabase, ref, onValue } from "firebase/database";
-const database = getDatabase(cong);
-const collectionRef = ref(database, "users");
+export type Location = {
+    id: string;
+    LocationAddress: string;
+    LocationName: string;
+    LocationCoordinates: [number, number];
+}
 
-const fetchData = () => {
-    onValue(collectionRef, (snapshot) => {
-        const dataItem = snapshot.val();
-        if (dataItem) {
-            // Convert the object values into an array
-            const displayItem= Object.values(dataItem);
-            displayItem.forEach((item) => {
-                console.table(item);
-            });
-        }
+
+// retrieve all todos
+export const all = async (): Promise<Array<Location>> => {
+    const snapshot = await cong.collection(COLLECTION_NAME).get();
+    const data: Array<any> = [];
+
+    snapshot.docs.map((_data: { id: any; data: () => any; }) => {
+        data.push({
+            id: _data.id, // because id field in separate function in firestore
+            ..._data.data(), // the remaining fields
+        });
     });
+
+    // return and convert back it array of todo
+    return data as Array<Location>;
 };
 
-//Uncomment to test
-// fetchData();
+
+all().then((data) => {
+    console.log(data);
+});
