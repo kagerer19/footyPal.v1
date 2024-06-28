@@ -1,32 +1,38 @@
-// All code is for testing purposes only
-import cong from "./config/firebaseConfig";
-const COLLECTION_NAME = "teams";
+import {Application} from "express";
 
-export type Location = {
-    id: string;
-    LocationAddress: string;
-    LocationName: string;
-    LocationCoordinates: [number, number];
-}
+const express = require("express");
+const bodyParser = require("body-parser");
+export const app:Application = express();
 
+// Import routes
+const showGamesRoute = require('./routes/gameRoutes');
+const createGameRoute = require('./routes/gameRoutes');
+const deleteGameRoute = require('./routes/gameRoutes');
+const updateGameRoute = require('./routes/gameRoutes');
+const showGameRoute = require('./routes/gameRoutes');
 
-// retrieve all todos
-export const all = async (): Promise<Array<Location>> => {
-    const snapshot = await cong.collection(COLLECTION_NAME).get();
-    const data: Array<any> = [];
-
-    snapshot.docs.map((_data: { id: any; data: () => any; }) => {
-        data.push({
-            id: _data.id, // because id field in separate function in firestore
-            ..._data.data(), // the remaining fields
-        });
-    });
-
-    // return and convert back it array of todo
-    return data as Array<Location>;
-};
+//!TODO Add cors
 
 
-all().then((data) => {
-    console.log(data);
+// Middleware
+app.use(bodyParser.json({limit: "15mb"}));
+app.use(bodyParser.urlencoded({
+    limit: "15mb",
+    extended: true
+}));
+
+app.use('/api', showGamesRoute)
+app.use('/api', createGameRoute)
+app.use('/api', deleteGameRoute)
+app.use('/api', updateGameRoute)
+app.use('/api', showGameRoute)
+
+
+ const port = 8000 || 9000
+ app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
+
+ module.exports = app
+
+

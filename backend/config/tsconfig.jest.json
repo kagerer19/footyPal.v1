@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    //!TODO what do i need for the Node and express packages
+  }
+}
