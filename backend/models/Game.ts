@@ -1,8 +1,8 @@
+// !TODO Adjust the dateTime stamp once frontend development begin. Date and time will be added correctly one the dat and time picker gets implemented
 export interface Game {
-    gameid: number;
-    date: Date;
-    time: string;
-    locationid: number;
-    availablespots: number;
+    gameid?: string;
+    gameLocation?: string;
+    availableSpots: number;
+    dateTime: string;
   }
   
