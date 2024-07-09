@@ -2,6 +2,6 @@ export interface Location {
     pitchid: number;
     name: string;
     address: string;
-    coordinates: string; // Google Maps coordinates
+    coordinates: Geolocation; // Google Maps coordinates
   }
   

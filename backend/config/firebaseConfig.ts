@@ -1,10 +1,8 @@
-// import firebase
-import * as firebaseFirestore from 'firebase/compat/app';
-import firebase from "firebase/compat/app";
+import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/auth';
 
-require('dotenv').config()
+require('dotenv').config();
 
 const firebaseApp = firebase.initializeApp({
     apiKey: process.env.API_KEY_MM,
@@ -14,9 +12,14 @@ const firebaseApp = firebase.initializeApp({
     storageBucket: process.env.STORAGEBUCKET,
     messagingSenderId: process.env.MESSAGINGSENDERID,
     appId: process.env.APPID,
-    measurementId:  process.env.MEASUREMENTID
+    measurementId: process.env.MEASUREMENTID
 });
 
 const db = firebaseApp.firestore();
-export default db;
 
+// // Connect to emulator if in development mode
+// if (process.env.NODE_ENV === 'development') {
+//   db.useEmulator('localhost', 8080);
+// }
+
+export default db;

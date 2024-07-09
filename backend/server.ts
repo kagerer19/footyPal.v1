@@ -12,6 +12,9 @@ const deleteGameRoute = require('./routes/gameRoutes');
 const updateGameRoute = require('./routes/gameRoutes');
 const showGameRoute = require('./routes/gameRoutes');
 
+// Import locationRouts
+const locationRoutes = require('./routes/locationRoutes');
+
 //!TODO Add cors
 
 // Middleware
@@ -22,12 +25,14 @@ app.use(bodyParser.urlencoded({
 }));
 
 // add morgan for logs
-app.use(morgan('dev'));
+app.use(morgan('combined'));
 app.use('/api', showGamesRoute)
 app.use('/api', createGameRoute)
 app.use('/api', deleteGameRoute)
 app.use('/api', updateGameRoute)
 app.use('/api', showGameRoute)
+
+app.use('/api', locationRoutes);
 
 
  const port = 8000 || 9000
