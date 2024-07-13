@@ -13,8 +13,6 @@ const updateGameRoute = require('./routes/gameRoutes');
 const showSignUpRoute = require('./routes/authRoutes');
 const showSignInRoute = require('./routes/authRoutes');
 const showSignOutRoute = require('./routes/authRoutes');
-
-// Import locationRouts
 const locationRoutes = require('./routes/locationRoutes');
 
 //!TODO Add cors
@@ -28,6 +26,7 @@ app.use(bodyParser.urlencoded({
 
 // add morgan for logs
 app.use(morgan('combined'));
+//Games
 app.use('/api', showGamesRoute)
 app.use('/api', createGameRoute)
 app.use('/api', deleteGameRoute)
@@ -36,6 +35,8 @@ app.use('/api', updateGameRoute)
 app.use('/api', showSignUpRoute)
 app.use('/api', showSignInRoute)
 app.use('/api', showSignOutRoute)
+//locations
+app.use('/api',locationRoutes)
 
  const port = 8000 || 9000
  app.listen(port, () => {
