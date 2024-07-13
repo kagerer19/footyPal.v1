@@ -1,9 +1,9 @@
-import admin, { ServiceAccount } from 'firebase-admin';
+import admin, {ServiceAccount} from 'firebase-admin'
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-require('dotenv').config();
+import {getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from 'firebase/auth';
+require('dotenv').config()
 
 const serviceAccountPath: string = process.env.SERVICE_ACCOUNT_KEY_PATH || "";
 const serviceAccount: ServiceAccount = require(serviceAccountPath);
@@ -30,4 +30,5 @@ const adminDb = admin.firestore();
 const adminAuth = admin.auth();
 const auth = getAuth(firebaseApp);  // Get authentication from the client SDK
 
-export { adminDb, adminAuth, db, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword };
+export {adminDb, adminAuth, db, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword};
+
