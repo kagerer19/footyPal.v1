@@ -13,7 +13,11 @@ const updateGameRoute = require('./routes/gameRoutes');
 const showGameRoute = require('./routes/gameRoutes');
 
 // Import locationRouts
-const locationRoutes = require('./routes/locationRoutes');
+const createLocationRoute = require('./routes/locationRoutes');
+const showLocationsRoute = require('./routes/locationRoutes');
+const showLocationRoute = require('./routes/locationRoutes');
+const deleteLocationRoute = require('./routes/locationRoutes');
+const updateLocationRoute = require('./routes/locationRoutes');
 
 //!TODO Add cors
 
@@ -32,8 +36,11 @@ app.use('/api', deleteGameRoute)
 app.use('/api', updateGameRoute)
 app.use('/api', showGameRoute)
 
-app.use('/api', locationRoutes);
-
+app.use('/api', createLocationRoute)
+app.use('/api', showLocationsRoute)
+app.use('/api', showLocationRoute)
+app.use('/api', deleteLocationRoute)
+app.use('/api', updateLocationRoute)
 
  const port = 8000 || 9000
  app.listen(port, () => {

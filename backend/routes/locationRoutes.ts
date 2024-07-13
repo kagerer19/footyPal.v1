@@ -16,7 +16,7 @@ router.post('/locations/create', createLocation);
 router.delete('/locations/:locationid', deleteLocation);
 
 //  api/locations/update/:locationid
-router.put('/locations/update/:locationid', updateLocation);
+router.put('/locations/:locationid', updateLocation);
 
 module.exports = router;
 
