@@ -1,5 +1,4 @@
-import {Application} from "express";
-
+import { Application } from "express";
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan")
@@ -34,7 +33,6 @@ app.use(bodyParser.urlencoded({
 
 // add morgan for logs
 app.use(morgan('combined'));
-//Games
 app.use('/api', showGamesRoute)
 app.use('/api', createGameRoute)
 app.use('/api', deleteGameRoute)
