@@ -1,4 +1,4 @@
-import db from "../config/firebaseConfig";
+import {db} from "../config/firebaseConfig";
 import {Request, Response, NextFunction} from "express";
 import {Game} from "../models/Game";
 
