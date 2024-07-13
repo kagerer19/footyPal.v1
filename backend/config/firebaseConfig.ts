@@ -1,9 +1,19 @@
-import firebase from 'firebase/compat/app';
+import admin, {ServiceAccount} from 'firebase-admin'
+import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
-import 'firebase/auth';
+import 'firebase/compat/auth';
+import {getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from 'firebase/auth';
+require('dotenv').config()
 
-require('dotenv').config();
+const serviceAccountPath: string = process.env.SERVICE_ACCOUNT_KEY_PATH || "";
+const serviceAccount: ServiceAccount = require(serviceAccountPath);
 
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: process.env.DATABASEURL,
+});
+
+// Initialize the Firebase Client SDK
 const firebaseApp = firebase.initializeApp({
     apiKey: process.env.API_KEY_MM,
     authDomain: process.env.AUTHDOMAIN,
@@ -16,10 +26,9 @@ const firebaseApp = firebase.initializeApp({
 });
 
 const db = firebaseApp.firestore();
+const adminDb = admin.firestore();
+const adminAuth = admin.auth();
+const auth = getAuth(firebaseApp);  // Get authentication from the client SDK
 
-// // Connect to emulator if in development mode
-// if (process.env.NODE_ENV === 'development') {
-//   db.useEmulator('localhost', 8080);
-// }
+export {adminDb, adminAuth, db, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword};
 
-export default db;

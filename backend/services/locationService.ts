@@ -1,4 +1,4 @@
-import db from "../config/firebaseConfig";
+import {db} from "../config/firebaseConfig";
 import { Request, Response, NextFunction } from "express";
 import firebase from 'firebase/compat/app';
 import { Location } from "../models/Location";
