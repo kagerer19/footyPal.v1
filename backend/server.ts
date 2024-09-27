@@ -10,9 +10,13 @@ const createGameRoute = require('./routes/gameRoutes');
 const deleteGameRoute = require('./routes/gameRoutes');
 const updateGameRoute = require('./routes/gameRoutes');
 const showGameRoute = require('./routes/gameRoutes');
-const showSignUpRoute = require('./routes/authRoutes');
-const showSignInRoute = require('./routes/authRoutes');
-const showSignOutRoute = require('./routes/authRoutes');
+const showSignUpRoute = require('./routes/userRoutes');
+const showSignInRoute = require('./routes/userRoutes');
+const showSignOutRoute = require('./routes/userRoutes');
+const showUsersRoute = require('./routes/userRoutes');
+const showSingleUserRoute = require('./routes/userRoutes');
+const showUpdateUserRoute = require('./routes/userRoutes');
+const showDeleteUserRoute = require('./routes/userRoutes');
 
 // Import locationRouts
 const locationRoutes = require('./routes/locationRoutes');
@@ -36,6 +40,10 @@ app.use('/api', showGameRoute)
 app.use('/api', showSignUpRoute)
 app.use('/api', showSignInRoute)
 app.use('/api', showSignOutRoute)
+app.use('/api', showUsersRoute)
+app.use('/api', showSingleUserRoute)
+app.use('/api', showUpdateUserRoute)
+app.use('/api', showDeleteUserRoute)
 app.use('/api', locationRoutes);
 
 

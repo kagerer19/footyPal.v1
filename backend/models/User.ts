@@ -1,9 +1,8 @@
 export interface User {
-    userid: number;
+    uuid?: string;
     username: string;
-    email: string; // Managed by Supabase Auth, no password needed.
-    favouredlocation: number;
-    favouredposition: string; // Could be ENUM if we have a fixed set of positions.
+    email: string;
+    favouredlocation: string;
+    favouredposition: string;
     ishometeam: boolean;
   }
-  
