@@ -24,9 +24,11 @@
     "express": "^4.19.2",
     "firebase": "^10.11.1",
     "firebase-admin": "^12.2.0",
+    "mongodb": "^6.9.0",
     "morgan": "^1.10.0",
     "save-dev": "^0.0.1-security",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "winston": "^3.14.2"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
